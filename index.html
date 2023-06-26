@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Done-Did-That App: A To-Do App</title>
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <main>
+            <header>
+                <p class="mobileMenu" id="mobileMenu">☰</p>
+                <nav>
+                    <h1>Done-Did-That App</h1>  
+                    <button>New Day</button>
+                    <div id="history"></div>
+                </nav>
+            </header>
+    
+            <section id="new">
+                <h2>Choose a Date</h2>
+                <input type="date" id="date">
+                <button id="addDate">Add a New Day</button>
+            </section>
+    
+            <section id="list">
+                <h3 id="day"></h3>
+                <input type="text" id="task">
+                <button id="addTask">Add Task</button>
+    
+                <div id="tasks"></div>
+            </section>
+        </main>
+
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
