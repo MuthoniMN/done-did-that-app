@@ -15,7 +15,7 @@ function startNewDay() {
 // creates a to-do list for today
 let today = new Date()
 
-document.querySelector('h3').innerHTML = `${today.getDate()}-${today.getMonth()}-${today.getFullYear()}`
+document.querySelector('#day').innerHTML = `${today.getDate()}-${today.getMonth()}-${today.getFullYear()}`
 
 let task = []
 
@@ -32,6 +32,7 @@ function addNewTask() {
 `
 
     task.push(document.querySelector('#task').value)
+    localStorage.setItem(`${document.querySelector('#day').innerHTML}`, task)
 
     document.querySelector('#task').value = ''
     num++
@@ -40,10 +41,13 @@ function addNewTask() {
 // check if the task is done
 function getChecked() {
     document.querySelectorAll('.inputwrapper').forEach((a) => {
-        a.addEventListener('click', () => {
-            a.classList.toggle('done')
-        })
-})    
+        if (a.firstChild.nextSibling.checked) {
+            a.lastChild.previousSibling.classList.add('done')
+        }else{
+            a.lastChild.previousSibling.classList.remove('done')
+        }
+    })
+
 }
 
 setInterval(getChecked, 100)
